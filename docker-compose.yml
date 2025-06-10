@@ -4,6 +4,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: portainer-mcp
+    labels:
+      - com.centurylinklabs.watchtower.enable=false
     ports:
       - "${PORTAINER_MCP_PORT:-9153}:${PORTAINER_MCP_PORT:-9153}"
     env_file:
